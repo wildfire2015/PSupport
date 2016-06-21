@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTrunk.CSharp", "GameTrunk.CSharp.csproj", "{09DCE43D-E372-A655-C098-29745B9EE408}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameTrunk.CSharp.Editor", "GameTrunk.CSharp.Editor.csproj", "{774D9EEF-A54C-8603-4022-137EA291F570}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09DCE43D-E372-A655-C098-29745B9EE408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09DCE43D-E372-A655-C098-29745B9EE408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09DCE43D-E372-A655-C098-29745B9EE408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09DCE43D-E372-A655-C098-29745B9EE408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774D9EEF-A54C-8603-4022-137EA291F570}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774D9EEF-A54C-8603-4022-137EA291F570}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774D9EEF-A54C-8603-4022-137EA291F570}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774D9EEF-A54C-8603-4022-137EA291F570}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

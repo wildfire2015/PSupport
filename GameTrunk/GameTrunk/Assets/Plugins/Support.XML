@@ -1,0 +1,392 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Support</name>
+    </assembly>
+    <members>
+        <member name="T:PSupport.DLoger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:PSupport.DLoger.EnableLog">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PSupport.DLoger.Log(System.Object)">
+            <summary>
+            输出到控制台
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:PSupport.DLoger.Log(System.Object,UnityEngine.Object)">
+            <summary>
+            输出到控制台
+            </summary>
+            <param name="message"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:PSupport.DLoger.LogError(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:PSupport.DLoger.LogError(System.Object,UnityEngine.Object)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="context"></param>
+        </member>
+        <member name="M:PSupport.DLoger.LogWarning(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:PSupport.DLoger.LogWarning(System.Object,UnityEngine.Object)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="context"></param>
+        </member>
+        <member name="T:PSupport.LoadSystem.ProcessDelegateArgc">
+            <summary>
+            回调函数的委托
+            </summary>
+            <param name="obj">回调参数</param>
+            <param name="loadedNotify">加载结果</param>
+        </member>
+        <member name="T:PSupport.LoadSystem.ResourceLoadManager">
+            <summary>
+            资源加载管理器
+            </summary>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestRes(System.String,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            在URLPath上读取类型为Object的资源,如果设置了URL和StreamingAssets,则会比较本地资源和服务器资源,如果本地和服务器一样则用本地的,如果不一样则用服务器的
+            如果只设置了服务器则用服务器,如果只设置了本地则用本地
+            请求资源,指定同步加载还是异步加载,如果已经加载成功,返回,如果正在加载返回空,如果没有加载,则同步或者异步加载,返回空,异步加载完毕,调用回调函数proc
+            求情资源的类型,如果设置了类型,则getRes相应的资源时,也要带上请求时用的资源类型,默认都是Object,注意:在removeRes的时候,要对应创建时类型
+            </summary>
+            <param name="spath">路径</param>
+            <param name="proc">加载结果回调</param>
+            <param name="o">回调传递参数</param>
+            <param name="basyn">解压是否异步</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestRes(System.String,System.Type,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            在URLPath上读取类型为Object的资源,如果设置了URL和StreamingAssets,则会比较本地资源和服务器资源,如果本地和服务器一样则用本地的,如果不一样则用服务器的
+            如果只设置了服务器则用服务器,如果只设置了本地则用本地
+            请求资源,指定同步加载还是异步加载,如果已经加载成功,返回,如果正在加载返回空,如果没有加载,则同步或者异步加载,返回空,异步加载完毕,调用回调函数proc
+            求情资源的类型,如果设置了类型,则getRes相应的资源时,也要带上请求时用的资源类型,默认都是Object,注意:在removeRes的时候,要对应创建时类型
+            </summary>
+            <param name="spath"></param>
+            <param name="type">资源类型</param>
+            <param name="proc"></param>
+            <param name="o"></param>
+            <param name="basyn">解压是否异步</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestRes(System.String,PSupport.LoadSystem.eLoadResPath,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            在URLPath上读取类型为Object的资源,如果设置了URL和StreamingAssets,则会比较本地资源和服务器资源,如果本地和服务器一样则用本地的,如果不一样则用服务器的
+            如果只设置了服务器则用服务器,如果只设置了本地则用本地
+            请求资源,指定同步加载还是异步加载,如果已经加载成功,返回,如果正在加载返回空,如果没有加载,则同步或者异步加载,返回空,异步加载完毕,调用回调函数proc
+            求情资源的类型,如果设置了类型,则getRes相应的资源时,也要带上请求时用的资源类型,默认都是Object,注意:在removeRes的时候,要对应创建时类型
+            </summary>
+            <param name="spath">资源路径名称数组(相对于Resources/),不要带扩展名</param>
+            <param name="eloadResType">加载资源的路径类型,如果设置了Resources,是不受管理器mbuseassetbundle影响的</param>
+            <param name="proc">加载完毕回调函数</param>
+            <param name="o">回调函数的参数</param>
+            <param name="basyn"> 解压是否异步</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestRes(System.String[],PSupport.LoadSystem.eLoadResPath,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            在URLPath上读取类型为Object的资源,如果设置了URL和StreamingAssets,则会比较本地资源和服务器资源,如果本地和服务器一样则用本地的,如果不一样则用服务器的
+            如果只设置了服务器则用服务器,如果只设置了本地则用本地
+            请求资源,指定同步加载还是异步加载,如果已经加载成功,返回,如果正在加载返回空,如果没有加载,则同步或者异步加载,返回空,异步加载完毕,调用回调函数proc
+            求情资源的类型,如果设置了类型,则getRes相应的资源时,也要带上请求时用的资源类型,默认都是Object,注意:在removeRes的时候,要对应创建时类型
+            </summary>
+            <param name="spaths">所有路径</param>
+            <param name="eloadResType">加载资源的路径类型</param>
+            <param name="proc">加载完毕回调函数</param>
+            <param name="o">回调参数</param>
+            <param name="basyn">解压是否异步</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestRes(System.String[],System.Type,PSupport.LoadSystem.eLoadResPath,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            在URLPath上读取类型为Object的资源,如果设置了URL和StreamingAssets,则会比较本地资源和服务器资源,如果本地和服务器一样则用本地的,如果不一样则用服务器的
+            如果只设置了服务器则用服务器,如果只设置了本地则用本地
+            请求资源,指定同步加载还是异步加载,如果已经加载成功,返回,如果正在加载返回空,如果没有加载,则同步或者异步加载,返回空,异步加载完毕,调用回调函数proc
+            求情资源的类型,如果设置了类型,则getRes相应的资源时,也要带上请求时用的资源类型,默认都是Object,注意:在removeRes的时候,要对应创建时类型
+            </summary>
+            <param name="spaths">所有路径</param>
+            <param name="type">类型</param>
+            <param name="eloadResType">加载资源的路径类型</param>
+            <param name="proc">加载完毕回调函数</param>
+            <param name="o">回调参数</param>
+            <param name="basyn">解压是否异步</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestRes(System.String,System.Type,PSupport.LoadSystem.eLoadResPath,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            在URLPath上读取类型为Object的资源,如果设置了URL和StreamingAssets,则会比较本地资源和服务器资源,如果本地和服务器一样则用本地的,如果不一样则用服务器的
+            如果只设置了服务器则用服务器,如果只设置了本地则用本地
+            请求资源,指定同步加载还是异步加载,如果已经加载成功,返回,如果正在加载返回空,如果没有加载,则同步或者异步加载,返回空,异步加载完毕,调用回调函数proc
+            求情资源的类型,如果设置了类型,则getRes相应的资源时,也要带上请求时用的资源类型,默认都是Object,注意:在removeRes的时候,要对应创建时类型
+            </summary>
+            <param name="spath"></param>
+            <param name="type"></param>
+            <param name="eloadResType"></param>
+            <param name="proc"></param>
+            <param name="o"></param>
+            <param name="basyn">解压是否异步</param>
+            
+            <returns></returns>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestResNoAutoRelease(System.String,System.Type,PSupport.LoadSystem.eLoadResPath,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            读取的资源的bundle不会自动释放,要手动调用unloadNoAutoReleasebundle
+            </summary>
+            <param name="spath"></param>
+            <param name="type"></param>
+            <param name="eloadResType"></param>
+            <param name="proc"></param>
+            <param name="o"></param>
+            <param name="basyn"></param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.unloadNoAutoReleasebundle(System.String,System.Type,PSupport.LoadSystem.eLoadResPath)">
+            <summary>
+            释放对应调用requestResNoAutoRelease的资源
+            </summary>
+            <param name="respath"></param>
+            <param name="type"></param>
+            <param name="eloadResType"></param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.requestRes(System.String[],System.Type[],PSupport.LoadSystem.eLoadResPath,PSupport.LoadSystem.ProcessDelegateArgc,System.Object,System.Boolean)">
+            <summary>
+            在URLPath上读取类型为Object的资源,如果设置了URL和StreamingAssets,则会比较本地资源和服务器资源,如果本地和服务器一样则用本地的,如果不一样则用服务器的
+            如果只设置了服务器则用服务器,如果只设置了本地则用本地
+            请求资源,指定同步加载还是异步加载,如果已经加载成功,返回,如果正在加载返回空,如果没有加载,则同步或者异步加载,返回空,异步加载完毕,调用回调函数proc
+            求情资源的类型,如果设置了类型,则getRes相应的资源时,也要带上请求时用的资源类型,默认都是Object,注意:在removeRes的时候,要对应创建时类型
+            </summary>
+            <param name="spaths">所有路径</param>
+            <param name="types">所有路径对应的类型</param>
+            <param name="eloadResType">加载资源的路径类型</param>
+            <param name="proc">加载完毕回调函数</param>
+            <param name="o">回调参数</param>
+            <param name="basyn">解压是否异步</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.updateToLatestBundles(PSupport.LoadSystem.ProcessDelegateArgc,System.String[])">
+            <summary>
+            更新服务器上最新的资源
+            </summary>
+            <param name="loadedproc">回调函数</param>
+            <param name="updateOnlyPack">这里的资源包只做更新,不做初始化下载,就是说,除非本地已经下载过这个包,才会参与包更新,如果本地没有这个包,这不会去下载</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager._getStreamingAssetsNameByLoadStyle(PSupport.LoadSystem.eLoadResPath)">
+            <summary>
+            获得Manifest的bundle的名字,URL上的名字和本地的名字不能重名
+            </summary>
+            <param name="eloadrespath"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.getRes(System.String,System.Type,PSupport.LoadSystem.eLoadResPath)">
+            <summary>
+            获得已经加ResourcesManager.request加载完毕的对象
+            </summary>
+            <param name="respath">路径</param>
+            <param name="type">类型</param>
+            <param name="eloadResType">加载资源的路径类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.getRes(System.String,PSupport.LoadSystem.eLoadResPath)">
+            <summary>
+            获得已经加ResourcesManager.request加载完毕的对象
+            </summary>
+            <param name="respath">路径</param>
+            <param name="eloadResType">加载资源的路径类型</param>
+            <returns></returns>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.clearAll">
+            <summary>
+            清空所有缓存资源
+            </summary>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.removeRes(System.String,PSupport.LoadSystem.eLoadResPath)">
+            <summary>
+            移除资源
+            </summary>
+            <param name="respath">资源路径</param>
+            <param name="eloadResType">加载资源的路径类型</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.removeRes``1(System.String,PSupport.LoadSystem.eLoadResPath)">
+            <summary>
+            移除资源
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="respath"></param>
+            <param name="eloadResType">加载资源的路径类型</param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager._removeRes(System.String)">
+            <summary>
+            移除资源,专门在LoadAsset里面移除bundle用
+            </summary>
+            <param name="sReskey"></param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager.removeRes(System.String,System.Type,PSupport.LoadSystem.eLoadResPath)">
+            <summary>
+            移除资源
+            </summary>
+            <param name="respath"></param>
+            <param name="type"></param>
+            <param name="eloadResType"></param>
+        </member>
+        <member name="M:PSupport.LoadSystem.ResourceLoadManager._isLoadedRes(System.String)">
+            <summary>
+            是否是已经加载完毕的资源
+            </summary>
+            <param name="skey">(sAssetPath + type.ToString())</param>
+            <returns></returns>
+        </member>
+        <member name="F:PSupport.LoadSystem.ResourceLoadManager.mbuseassetbundle">
+            <summary>
+            是否读取打包资源
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.ResourceLoadManager.mResourcesURLAddress">
+            <summary>
+            指定资源的网络路径
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.ResourceLoadManager.mResourceStreamingAssets">
+            <summary>
+            指定资源的网络路径
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.ResourceLoadManager.mBundlesInfoFileName">
+            <summary>
+            设定记录bundle信息的文件名
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.ResourceLoadManager._mURLAssetBundleManifest">
+            <summary>
+            AssetBundleManifest对象
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.ResourceLoadManager._mDicAssetsDependBundles">
+            <summary>
+            记录依赖包的引用和计数
+            </summary>
+        </member>
+        <member name="T:PSupport.LoadSystem.eLoadedNotify">
+            <summary>
+            加载结果
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadedNotify.Load_Failed">
+            <summary>
+            加载失败
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadedNotify.Load_OneSuccessfull">
+            <summary>
+            加载一个成功
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadedNotify.Load_Successfull">
+            <summary>
+            加载全部完成
+            </summary>
+        </member>
+        <member name="T:PSupport.LoadSystem.eLoadResPath">
+            <summary>
+            枚举3种读取资源的来源
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPath.RP_Resources">
+            <summary>
+            读取Resources下的资源
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPath.RP_StreamingAssets">
+            <summary>
+            读取本地StreamingAssets下的资源
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPath.RP_URL">
+            <summary>
+            读取网络路径
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPath.RP_Unknow">
+            <summary>
+            未知
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPathState.LS_ReadURLOnly">
+            <summary>
+            只读取URL的资源
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPathState.LS_ReadStreamingOnly">
+            <summary>
+            只读取StreamingAssets的资源
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPathState.LS_ReadURLForUpdate">
+            <summary>
+            优先读取URL的资源
+            </summary>
+        </member>
+        <member name="F:PSupport.LoadSystem.eLoadResPathState.LS_EmptyAddress">
+            <summary>
+            没有配置资源路径
+            </summary>
+        </member>
+        <member name="T:PSupport.SingleMono">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:PSupport.SingleMono.IsDestroying">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:PSupport.SingleMono.IsCreatedInstance(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="Name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PSupport.SingleMono.getInstance``1">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:PSupport.SingleMono.RemoveInstance(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="Name"></param>
+        </member>
+        <member name="T:GameMainDll">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:GameMainDll.getScriptType(System.String)">
+            <summary>
+            获取链接库中脚本类型
+            </summary>
+            <param name="sScriptName">脚本名字</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

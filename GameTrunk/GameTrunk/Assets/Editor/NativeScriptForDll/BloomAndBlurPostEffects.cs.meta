@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 333541aca98e04b408a71767a3248851
+timeCreated: 1450352366
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - cameraRenderTexture: {instanceID: 0}
+  - customGrabRenderTextureA: {instanceID: 0}
+  - customGrabRenderTextureB: {instanceID: 0}
+  - customGrabRenderTextureC: {instanceID: 0}
+  - customGrabRenderTextureD: {instanceID: 0}
+  - BloomAndBlurMat: {instanceID: 0}
+  - ScreenChangeColorMat: {fileID: 2100000, guid: 3204d7aff1d9d3e4986c2187c19ccb89,
+      type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

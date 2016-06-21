@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Editor</name>
+    </assembly>
+    <members>
+        <member name="T:BuildUIScriptFromPrefab">
+             <summary>
+            dicUIType.Add("Img"  ,  "Image");
+            dicUIType.Add("Btn"  ,  "Button");
+            dicUIType.Add("Txt"  ,  "Text");
+            dicUIType.Add("Tran" ,  "Transform");
+            dicUIType.Add("Scrb" ,  "Scrollbar");
+            dicUIType.Add("Sld"  ,  "Slider");
+            dicUIType.Add("Ipt"  ,  "InputField")
+            dicUIType.Add("Scrr" ,  "ScrollRect")
+            dicUIType.Add("RImg" ,  "RawImage");
+            dicUIType.Add("Tog"  ,  "Toggle");
+             </summary>
+        </member>
+        <member name="T:Editor.Properties.Resources">
+            <summary>
+              一个强类型的资源类，用于查找本地化的字符串等。
+            </summary>
+        </member>
+        <member name="P:Editor.Properties.Resources.ResourceManager">
+            <summary>
+              返回此类使用的缓存的 ResourceManager 实例。
+            </summary>
+        </member>
+        <member name="P:Editor.Properties.Resources.Culture">
+            <summary>
+              使用此强类型资源类，为所有资源查找
+              重写当前线程的 CurrentUICulture 属性。
+            </summary>
+        </member>
+        <member name="P:Editor.Properties.Resources.NativeScriptdllcsproj">
+             <summary>
+               查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+            &lt;Project ToolsVersion=&quot;14.0&quot; DefaultTargets=&quot;Build&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+              &lt;Import Project=&quot;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&quot; Condition=&quot;Exists(&apos;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&apos;)&quot; /&gt;
+              &lt;PropertyGroup&gt;
+                &lt;Configuration Condition=&quot; &apos;$(Configuration)&apos; == &apos;&apos; &quot;&gt;Debug&lt;/Configuration&gt;
+                &lt;Platform Condition=&quot; &apos;$(Platform)&apos; == &apos;&apos; &quot;&gt;AnyCPU&lt;/Platform&gt;
+                [字符串的其余部分被截断]&quot;; 的本地化字符串。
+             </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:Editor.Properties.Resources.NewUIClass" -->
+        <member name="P:Editor.Properties.Resources.Scriptdllcsproj">
+             <summary>
+               查找类似 &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+            &lt;Project ToolsVersion=&quot;14.0&quot; DefaultTargets=&quot;Build&quot; xmlns=&quot;http://schemas.microsoft.com/developer/msbuild/2003&quot;&gt;
+              &lt;Import Project=&quot;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&quot; Condition=&quot;Exists(&apos;$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props&apos;)&quot; /&gt;
+              &lt;PropertyGroup&gt;
+                &lt;Configuration Condition=&quot; &apos;$(Configuration)&apos; == &apos;&apos; &quot;&gt;Release&lt;/Configuration&gt;
+                &lt;Platform Condition=&quot; &apos;$(Platform)&apos; == &apos;&apos; &quot;&gt;AnyCPU&lt;/Platform&gt;
+              [字符串的其余部分被截断]&quot;; 的本地化字符串。
+             </summary>
+        </member>
+    </members>
+</doc>
