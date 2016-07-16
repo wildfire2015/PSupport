@@ -201,7 +201,7 @@ public class ExportAssetBundle
         
         try
         {
-            BuildPipeline.BuildAssetBundles(outputpath, BuildAssetBundleOptions.DeterministicAssetBundle, targetplatform);
+            BuildPipeline.BuildAssetBundles(outputpath, BuildAssetBundleOptions.DeterministicAssetBundle | BuildAssetBundleOptions.ChunkBasedCompression, targetplatform);
         }
         catch
         {
@@ -213,7 +213,8 @@ public class ExportAssetBundle
             Debug.Log(outputpath + "--bundles 生成出错!");
         }
         ToolFunctions.DeleteFolder(Application.dataPath + "/Resources/assetsbundles/scriptdll");
-
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
 
         //删除无用的的assetbundle 
 
@@ -244,19 +245,42 @@ public class ExportAssetBundle
         {
             AssetDatabase.DeleteAsset(unusedpath);
         }
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
         //删除无用的文件夹
         var listUnUsedAssetDir =
             from dirpath in allassetpaths
             where dirpath.Contains(streamingassetpath)
                     && Directory.Exists(dirpath)
-                    && (Directory.GetFiles(dirpath).Length == 0 || Directory.GetFiles(dirpath).Length == 1)//空或者只包含一个meta文件
+                    && (Directory.GetFileSystemEntries(dirpath).Length == 0 || Directory.GetFileSystemEntries(dirpath).Length == 1)//空或者只包含一个meta文件
             select dirpath;
         foreach (string unuseddir in listUnUsedAssetDir)
         {
             AssetDatabase.DeleteAsset(unuseddir);
         }
-
-
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
+        CompressTool compresstool = new CompressTool();
+        ToolFunctions.CreateNewFolder(Application.dataPath + "/StreamingAssets/ZIP");
+        AssetDatabase.Refresh();
+        AssetDatabase.SaveAssets();
+        foreach (string file in listusedfiles)
+        {
+            string fileoutput = Application.dataPath + "/StreamingAssets/ZIP/" + file + ".zip";
+            ToolFunctions.CheckAndCreateFolder(Path.GetDirectoryName(fileoutput));
+            compresstool.CompressFile(Application.dataPath + "/StreamingAssets/" + file, fileoutput);
+            AssetDatabase.Refresh();
+            AssetDatabase.SaveAssets();
+        }
+        ToolFunctions.CreateNewFolder(Application.dataPath + "/StreamingAssets/DEZIP");
+        foreach (string file in listusedfiles)
+        {
+            string fileoutput = Application.dataPath + "/StreamingAssets/DEZIP/" + file;
+            ToolFunctions.CheckAndCreateFolder(Path.GetDirectoryName(fileoutput));
+            compresstool.DecompressFile(Application.dataPath + "/StreamingAssets/ZIP/" + file + ".zip", fileoutput);
+            AssetDatabase.Refresh();
+            AssetDatabase.SaveAssets();
+        }
         AssetDatabase.Refresh();
         AssetDatabase.SaveAssets();
 

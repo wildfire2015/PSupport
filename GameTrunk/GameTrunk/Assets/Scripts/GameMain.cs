@@ -4,6 +4,8 @@ using PSupport.LoadSystem;
 using PSupport;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System.IO;
+
 
 public class GameMain : MonoBehaviour
 {
@@ -37,7 +39,9 @@ public class GameMain : MonoBehaviour
             //UIManager.openUIInRoot<UI_2>();
             //UIManager.openUIInRoot<UI_3>();
             //ResourceLoadManager.requestRes("assetsbundles/model/normalmodel/chara_guyongbing/chara_guyongbing",typeof(GameObject), OnLoadedModel);
-            ResourceLoadManager.requestResNoAutoRelease("assetsbundles/level/shadowtest", typeof(AssetBundle), eLoadResPath.RP_URL, OnLoadedSceneBundle);
+            //ResourceLoadManager.requestResNoAutoRelease("assetsbundles/level/shadowtest", typeof(AssetBundle), eLoadResPath.RP_URL, OnLoadedSceneBundle);
+            
+
         }
     }
     void OnLoadedModel(object o, eLoadedNotify loadedNotify)
