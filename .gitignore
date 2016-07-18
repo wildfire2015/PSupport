@@ -1,2 +1,12 @@
+#忽略中间文件
 Library/
+#忽略临时文件
 Temp/
+#忽略mmp临时文件
+*~$lock
+#Debug
+Debug/
+#Release
+Release/
+#pdb
+*.pdb
