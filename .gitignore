@@ -10,7 +10,7 @@ Debug/
 Release/
 #pdb
 *.pdb
-*pdb.meta
+*.pdb.meta
 #mdb
 *.mdb
 *.mdb.meta
